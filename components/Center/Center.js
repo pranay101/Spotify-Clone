@@ -1,8 +1,7 @@
 import {
-  ChevronDoubleDownIcon,
   ChevronDownIcon,
 } from "@heroicons/react/outline";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { shuffle } from "lodash";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -22,6 +21,7 @@ const colors = [
 
 function Center() {
   const { data: session } = useSession();
+  console.log(session);
   const [color, setcolor] = useState(null);
   const SpotifyApi = useSpotify();
   const playlistsId = useRecoilValue(playlistIdState);
@@ -44,7 +44,7 @@ function Center() {
   console.log(playlist);
 
   return (
-    <div className="flex-grow text-white">
+    <div className="flex-grow text-white h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8 ">
         <div className="flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2">
           <img
@@ -53,6 +53,7 @@ function Center() {
             alt="user-profile-picture"
           />
           <h2>{session?.user.name}</h2>
+          <p onClick={signOut}>Logout</p>
           <ChevronDownIcon className="h-5 w-5" />
         </div>
       </header>

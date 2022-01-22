@@ -28,14 +28,8 @@ function Sidebar() {
   return (
     <div className="text-gray-500 p-5 text-xs  
     lg:text-sm border-gray-900 overflow-y-scroll 
-    scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex">
+    scrollbar-hide pb-34 h-screen sm:w-[12rem] lg:w-[17rem] lg:max-w-[18rem] hidden md:inline-flex">
       <div className="space-y-4">
-        <button
-          onClick={() => signOut()}
-          className="flex items-center space-x-2 hover:text-white"
-        >
-          <p>Log out</p>
-        </button>
         <button className="flex items-center space-x-2 hover:text-white">
           <HomeIcon className="h-5 w-5" />
           <p>Home</p>
