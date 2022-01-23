@@ -12,9 +12,9 @@ import { debounce } from 'lodash';
 import { useSession } from 'next-auth/react';
 import { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { currentTrackIdState, isPlayingState } from '../atoms/songAtom';
-import useSongInfo from '../hooks/useSongInfo';
-import useSpotify from '../hooks/useSpotify';
+import { currentTrackIdState, isPlayingState } from '../../atoms/songAtom';
+import useSongInfo from '../../hooks/useSongInfo';
+import useSpotify from '../../hooks/useSpotify';
 
 function Player() {
   const spotifyApi = useSpotify();
