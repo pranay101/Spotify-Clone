@@ -21,7 +21,6 @@ const colors = [
 
 function Center() {
   const { data: session } = useSession();
-  console.log(session);
   const [color, setcolor] = useState(null);
   const SpotifyApi = useSpotify();
   const playlistsId = useRecoilValue(playlistIdState);
@@ -40,8 +39,6 @@ function Center() {
         console.log("Something went wrong!!", err);
       });
   }, [SpotifyApi, playlistsId]);
-
-  console.log(playlist);
 
   return (
     <div className="flex-grow text-white h-screen overflow-y-scroll scrollbar-hide">
